@@ -1,0 +1,33 @@
+﻿<Window x:Class="Lab2.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Lab2"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800" MinWidth="800" MinHeight="450" MaxWidth="800" MaxHeight="450">
+    <Grid MinWidth="500" MinHeight="400">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20*"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Button x:Name="bUpdate" Content="Обновить" Margin="10,0,0,10" Grid.RowSpan="2" Height="19" VerticalAlignment="Bottom" Click="Update" HorizontalAlignment="Left" Width="75"/>
+        <Button x:Name="bNextPage" Content="-&gt;" Margin="0,0,89.6,10" Grid.RowSpan="2" Click="MoveToNext" HorizontalAlignment="Right" Width="19" Height="19" VerticalAlignment="Bottom"/>
+        <Button x:Name="bPreviousPage" Content="&lt;-" Margin="0,0,113.6,10" Grid.RowSpan="2" Click="MoveToPrevious" HorizontalAlignment="Right" Width="19" Height="19" VerticalAlignment="Bottom"/>
+        <Button x:Name="bFirstPage" Content="В начало" Margin="0,0,137.6,10" Grid.RowSpan="2" Height="19" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="75" Click="MoveToFirst"/>
+        <Button x:Name="bLastPage" Content="В конец" Margin="0,0,9.6,10" Grid.RowSpan="2" Height="19" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="75" Click="MoveToLast"/>
+        <Button x:Name="bInfo" Content="Справка" HorizontalAlignment="Left" Margin="170,0,0,10" VerticalAlignment="Bottom" Width="75" Grid.RowSpan="2" Click="Info"/>
+        <ListView x:Name="tView" Margin="10,10,10,14" MaxWidth="774.4" MaxHeight="376" MinWidth="769" MinHeight="376" Grid.IsSharedSizeScope="True">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Идентификатор" Width ="90" DisplayMemberBinding="{Binding id}"/>
+                    <GridViewColumn Header="Наименование" Width ="664.4" DisplayMemberBinding="{Binding name}"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <Button x:Name="bUpdateInfo" Content="Изменения" HorizontalAlignment="Left" Margin="90,0,0,10" Width="75" Grid.RowSpan="2" Click="UpdateInfo" Height="19" VerticalAlignment="Bottom"/>
+        <TextBox x:Name="tbID" Margin="250,0,0,10" TextWrapping="Wrap" Text="Введите идентификатор угрозы" Grid.RowSpan="2" Height="19" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="187"/>
+        <Button x:Name="bSearch" Content="Поиск" HorizontalAlignment="Left" Margin="442,0,0,10" Width="75" Grid.RowSpan="2" Click="ShowFullInfo" Height="19" VerticalAlignment="Bottom"/>
+
+    </Grid>
+</Window>
