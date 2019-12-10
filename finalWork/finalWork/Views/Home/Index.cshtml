@@ -1,0 +1,48 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+<h4>Создать онлайн</h4>
+<form method="post" action="/Home/TextEncode">
+    <table>
+
+        <tr>
+            <td>
+                <textarea placeholder="Введите текст" class="form-control" name="TextValue" rows="8" required>@ViewBag.TextValue</textarea>
+            </td>
+            <td>
+                <input type="submit" class="form-control" name="decodeText" formaction="/Home/TextDecode" value="Расшифровать текст" />
+                <input type="submit" class="form-control" name="encodeText" value="Зашифровать текст" />
+                <input type="submit" class="form-control" name="saveText" formaction="/Home/TextSave" value="Сохранить текст" />
+                <input type="text" placeholder="Ключ для текста" value="@ViewBag.KeyText" class="form-control" name="KeyText" required />
+                <input type="text" placeholder="Имя файла" value="@ViewBag.TextName" class="form-control" name="TextName" />
+            </td>
+        </tr>
+    </table>
+</form>
+@using (Html.BeginForm("DocxEncode", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+
+    <h4>Создать из файла</h4>
+    <table>
+        <tr>
+            <td valign="top">
+                <input type="file" accept=".docx" class="form-control" name="UploadedFileValue" required>
+            </td>
+            <td>
+                <input type="submit" class="form-control" name="DecodeFile" formaction="/Home/DocxDecode" value="Расшифровать файл" />
+            </td>
+            <td>
+
+                <input type="submit" class="form-control" name="EncodeFile" value="Зашифровать файл" />
+            </td>
+            <td>
+                <input type="text" placeholder="Ключ для файла" class="form-control" width="1000" value="@ViewBag.keyFile" name="KeyFile" required />
+            </td>
+            <td>
+
+                <input type="text" placeholder="Имя файла" value="@ViewBag.FileName" class="form-control" name="FileName" />
+
+            </td>
+        </tr>
+    </table>
+}
