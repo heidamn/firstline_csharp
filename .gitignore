@@ -219,3 +219,4 @@ FakesAssemblies/
 **/*.map
 **/*.css
 **/Content/
+**/fonts/
