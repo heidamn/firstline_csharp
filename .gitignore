@@ -51,6 +51,7 @@ artifacts/
 *.meta
 *.obj
 *.pch
+*.js
 *.pdb
 *.pgc
 *.pgd
@@ -215,6 +216,6 @@ FakesAssemblies/
 **/*.Server/GeneratedArtifacts
 **/*.Server/ModelManifest.xml
 
-finalWork/finalWork/Content/
-finalWork/finalWork/fonts/
-finalWork/finalWork/Scripts/
+**/*.map
+**/*.css
+**/Content/
